@@ -1,0 +1,162 @@
+body{
+  margin: 0;/*by default margin is given to  body*/
+}
+*{/*this will apply to each element*/
+  box-sizing: border-box;
+}
+.navbar{
+  height: 12vh;
+  background-color: #333;/*hashcode*/
+  display: flex;
+}
+.ticket-container{
+  height: 88vh;
+  background-color: #f2f2f2;
+  position: relative;
+  padding: 3rem;/* we want our ticket to have some gap from ticket container*/
+}
+.filter-container,.add-delete-container{
+  height: 8vh;
+  margin-top: 2vh;
+  margin-left: 8vw;
+  border-radius: 3px;/*in order to curve*/
+  background-color: #444;
+}
+.filter-container{
+  width:18vw;
+  display:flex;
+}
+.add-delete-container{
+  width: 9vw;
+  display: flex;
+} 
+.filter{
+  height: 100%;
+  width:25%; 
+}
+.pink-color-btn,
+.green-color-btn,
+.blue-color-btn,
+.yellow-color-btn{
+  display: block;/*in order to apply flex it should be block element*/
+  width: 40%;
+  height: 40%;
+  border-radius: 3px;
+  margin-top:calc(8vh*0.3);
+  margin-bottom:calc(8vh*0.3);
+  margin-left:calc(4.5vw*0.3); 
+  margin-right:calc(4.5vw*0.3)
+}
+.pink-color-btn,.modal-pink-filter,.ticket-color-pink{
+  background-color: pink;
+}
+.green-color-btn,.modal-green-filter,.ticket-color-green{
+  background-color: green;
+}
+.yellow-color-btn,.modal-yellow-filter,.ticket-color-yellow{
+  background-color: yellow;
+}
+.blue-color-btn,.modal-blue-filter,.ticket-color-blue{
+  background-color: blue;
+}
+.filter:hover{
+  background-color:#333 ;
+  cursor: pointer;
+}
+.add,.delete{
+  height: 100%;
+  width:50%; 
+}
+
+.action-btn{
+  display: block;
+  width: 40%;
+  height: 40%;
+  margin-top:calc(8vh*0.3);
+  margin-bottom:calc(8vh*0.3);
+  margin-left:calc(4.5vw*0.3); 
+  margin-right:calc(4.5vw*0.3);
+  background-color:white;
+  padding-left: 3%
+}
+.add:hover,.delete:hover{
+  background-color: #333;
+}
+
+/*modal css*/
+.modal{/*approx height and width*/
+  height: 18rem;
+  width: 35rem;
+  background: white;;
+  display: flex;
+  position: absolute;
+  top: 10rem;
+  left:calc((100vw - 35rem)/2);/*we have to give space otherwise we get error*/
+  box-shadow:0 0 50px 0 grey;
+}
+.task-to-be-added{
+  width: 70%;
+  height: 100%;
+  padding: 3rem;
+  outline: none;
+  overflow: auto;
+} 
+.modal-priority-list{
+
+  width: 30%;
+  height: 100%;
+  background-color: #333;
+  display: flex;/*for modal-filter*/
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem;
+}
+.modal-filter{
+  width: 100%;
+  height: 20%;
+}
+.modal-filter.active{
+ border:3px solid black
+}
+
+.modal-filter:hover{
+  opacity: 0.5;
+  cursor: pointer
+}
+/*modal css end*/
+
+/*ticket css*/
+.ticket{
+  height: 9rem;
+  width: 15rem;
+  background-color: antiquewhite;
+ /* margin: 0 auto 0 auto;*/
+ margin:10px;
+}
+.ticket-color{
+  height: 6%;
+  width:100%;
+}
+.ticket-id{
+  height: 15%;
+  width: 100%;
+  padding: 3%;
+  color:grey;
+}
+.task{
+  height: 79%;
+  width: 100%;
+  padding: 3%;
+}
+.ticket-container{
+  display: flex;/* so that our ticket add horizontally*/
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+ overflow-y: auto;/*in order to fix header we give scrollbar to container*/
+}
+.ticket.active{/*TO SELECT TICKET*/
+  box-shadow: 0 0 3px 1px;
+}
+.filter.active{
+  background-color: black;
+}
